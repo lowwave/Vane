@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */; };
 		B2938001243CD0C700B0BCAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2938000243CD0C700B0BCAF /* SceneDelegate.swift */; };
-		B2938003243CD0C700B0BCAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2938002243CD0C700B0BCAF /* ViewController.swift */; };
 		B2938006243CD0C700B0BCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2938004243CD0C700B0BCAF /* Main.storyboard */; };
 		B2938008243CD0C800B0BCAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2938007243CD0C800B0BCAF /* Assets.xcassets */; };
 		B293800B243CD0C800B0BCAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2938009243CD0C800B0BCAF /* LaunchScreen.storyboard */; };
 		B2938016243CD0C800B0BCAF /* VaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2938015243CD0C800B0BCAF /* VaneTests.swift */; };
 		B2938021243CD0C800B0BCAF /* VaneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2938020243CD0C800B0BCAF /* VaneUITests.swift */; };
+		B2C67F102440E4DA00A70EA2 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C67F0F2440E4DA00A70EA2 /* HabitViewController.swift */; };
+		B2C67F122440E6D800A70EA2 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C67F112440E6D800A70EA2 /* HabitCell.swift */; };
+		B2C67F142440E73A00A70EA2 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C67F132440E73A00A70EA2 /* Habit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 		B2937FFB243CD0C700B0BCAF /* Vane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2938000243CD0C700B0BCAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B2938002243CD0C700B0BCAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B2938005243CD0C700B0BCAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2938007243CD0C800B0BCAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B293800A243CD0C800B0BCAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		B293801C243CD0C800B0BCAF /* VaneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2938020243CD0C800B0BCAF /* VaneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaneUITests.swift; sourceTree = "<group>"; };
 		B2938022243CD0C800B0BCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2C67F0F2440E4DA00A70EA2 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		B2C67F112440E6D800A70EA2 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
+		B2C67F132440E73A00A70EA2 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,13 @@
 			children = (
 				B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */,
 				B2938000243CD0C700B0BCAF /* SceneDelegate.swift */,
-				B2938002243CD0C700B0BCAF /* ViewController.swift */,
 				B2938004243CD0C700B0BCAF /* Main.storyboard */,
 				B2938007243CD0C800B0BCAF /* Assets.xcassets */,
 				B2938009243CD0C800B0BCAF /* LaunchScreen.storyboard */,
 				B293800C243CD0C800B0BCAF /* Info.plist */,
+				B2C67F0F2440E4DA00A70EA2 /* HabitViewController.swift */,
+				B2C67F112440E6D800A70EA2 /* HabitCell.swift */,
+				B2C67F132440E73A00A70EA2 /* Habit.swift */,
 			);
 			path = Vane;
 			sourceTree = "<group>";
@@ -259,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2938003243CD0C700B0BCAF /* ViewController.swift in Sources */,
 				B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */,
+				B2C67F142440E73A00A70EA2 /* Habit.swift in Sources */,
 				B2938001243CD0C700B0BCAF /* SceneDelegate.swift in Sources */,
+				B2C67F122440E6D800A70EA2 /* HabitCell.swift in Sources */,
+				B2C67F102440E4DA00A70EA2 /* HabitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJLZGCMFS9;
 				INFOPLIST_FILE = Vane/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SJLZGCMFS9;
 				INFOPLIST_FILE = Vane/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
