@@ -21,7 +21,6 @@ class HabitCell: UITableViewCell {
     var markAsDoneButtonAction : () -> () = {}
     
     @IBAction func markAsDone(_ sender: Any) {
-        print("done")
         markAsDoneButtonAction()
     }
     
