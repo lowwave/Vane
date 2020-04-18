@@ -105,6 +105,9 @@
                                                                 <constraint firstAttribute="width" secondItem="2YB-ok-pFX" secondAttribute="height" multiplier="1:1" id="IwT-Pf-ZhS"/>
                                                                 <constraint firstAttribute="width" constant="40" id="gsE-mr-Mw5"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <action selector="markAsDone:" destination="GLf-zr-YWV" eventType="touchUpInside" id="5Ot-S1-GnG"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCB-pe-X4g">
                                                             <rect key="frame" x="50" y="0.0" width="234" height="70"/>
@@ -141,6 +144,7 @@
                                             <outlet property="habitIconView" destination="Kzt-uV-W0e" id="BeG-VE-iAO"/>
                                             <outlet property="habitTitleLabel" destination="vCB-pe-X4g" id="buc-c7-J0v"/>
                                             <outlet property="habitWrapperView" destination="Sce-3Q-cJS" id="ACY-JM-CDo"/>
+                                            <outlet property="markAsDoneButton" destination="2YB-ok-pFX" id="fqe-DW-crR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
