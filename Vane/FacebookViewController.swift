@@ -9,6 +9,7 @@ import UIKit
 // Add this to the body
 class FacebookViewController: UIViewController, LoginButtonDelegate, UIViewControllerTransitioningDelegate {
     
+    @IBOutlet weak var skipLoginButton: UIButton!
     let loginButton: FBLoginButton = {
         let button = FBLoginButton()
         return button
@@ -53,15 +54,21 @@ class FacebookViewController: UIViewController, LoginButtonDelegate, UIViewContr
 //            let fbId = data["id"] as! String
 //            let fbEmail = data["email"] as? String
             
-            
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "tabBarViewController") as! UITabBarController
-            
-            controller.modalPresentationStyle = .fullScreen
-            self.present(controller, animated: false, completion: nil)
-            
             print(data)
 //            print(fbFirstName, fbLastName, fbId)
             
+            self.finishSignIn()
         }
+    }
+    
+    
+    @IBAction func skipButtonTapped(_ sender: Any) {
+        finishSignIn()
+    }
+    
+    func finishSignIn() {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "tabBarViewController") as! UITabBarController
+        controller.modalPresentationStyle = .fullScreen
+        self.view.window?.rootViewController = controller
     }
 }
