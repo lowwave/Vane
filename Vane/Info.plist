@@ -16,34 +16,8 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb179397723311846</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>FacebookAppID</key>
-	<string>179397723311846</string>
-	<key>FacebookDisplayName</key>
-	<string>Vane</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fbapi</string>
-		<string>fb-messenger-api</string>
-		<string>fbauth2</string>
-		<string>fbshareextension</string>
-        <string>fb-messenger-share-api</string>
-	</array>
-    <key>FacebookAutoLogAppEventsEnabled</key>
-    <string>TRUE</string>
-    <key>FacebookAdvertiserIDCollectionEnabled</key>
-    <string>TRUE</string>
-
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>

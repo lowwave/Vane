@@ -10,8 +10,7 @@ import UIKit
 
 class HabitViewController: UIViewController {
     
-//    var habits: [Habit] = []
-    var habits = [Habit]()
+    var habits: [Habit] = []
     var username: String = "Username"
     
     @IBOutlet weak var habitsTableView: UITableView!
@@ -27,7 +26,7 @@ class HabitViewController: UIViewController {
     }
     
     private func createHabits() {
-        for i in 1...5 {
+        for i in 1...100 {
             let habit = Habit(title: "Habit number \(i)", icon: "droplet", isComplete: Bool.random())
             habits.append(habit)
         }
@@ -44,15 +43,6 @@ extension HabitViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell", for: indexPath)
         let habit = habits[indexPath.row]
         (cell as? HabitCell)?.bind(habit)
-        
-        (cell as? HabitCell)?.markAsDoneButtonAction = { [unowned self] in
-//            var habit = self.habits[indexPath.row]
-//            print(habit)
-            self.habits[indexPath.row].isComplete = !habit.isComplete
-            tableView.reloadRows(at: [indexPath], with: .none)
-//            DispatchQueue.main.async {}
-
-        }
         return cell
     }
 }

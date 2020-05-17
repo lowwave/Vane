@@ -48,11 +48,16 @@ class FacebookViewController: UIViewController, LoginButtonDelegate, UIViewContr
             
             let data = result as! [String: Any]
             
-//            let fbFirstName = data["first_name"] as! String
-//            let fbLastName = data["last_name"] as! String
-//            let fbId = data["id"] as! String
-//            let fbEmail = data["email"] as? String
-            
+            let fbId = data["id"] as! String
+            let fbFirstName = data["first_name"] as! String
+            let fbLastName = data["last_name"] as! String
+            let fbEmail = data["email"] as? String
+        
+            let defaults = UserDefaults.standard
+            defaults.set(fbId, forKey: "fbId")
+            defaults.set(fbFirstName, forKey: "fbFirstName")
+            defaults.set(fbLastName, forKey: "fbLastName")
+            defaults.set(fbEmail, forKey: "fbEmail")
             
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "tabBarViewController") as! UITabBarController
             

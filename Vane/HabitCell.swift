@@ -15,15 +15,6 @@ class HabitCell: UITableViewCell {
     @IBOutlet weak var habitCompleteButton: UIButton!
     @IBOutlet weak var habitWrapperView: UIView!
     
-    @IBOutlet weak var markAsDoneButton: UIButton!
-    
-    // closure from https://fluffy.es/handling-button-tap-inside-uitableviewcell-without-using-tag/
-    var markAsDoneButtonAction : () -> () = {}
-    
-    @IBAction func markAsDone(_ sender: Any) {
-        markAsDoneButtonAction()
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -38,8 +29,6 @@ class HabitCell: UITableViewCell {
         habitCompleteButton.layer.cornerRadius = 20
         habitCompleteButton.layer.borderWidth = 1.5
         habitCompleteButton.layer.borderColor = UIColor.black.cgColor
-        
-        self.markAsDoneButton.addTarget(self, action: #selector(markAsDone(_:)), for: .touchUpInside)
         
     }
     

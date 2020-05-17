@@ -12,6 +12,8 @@
 		49CCF633246C482A0065EC0C /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 49CCF632246C482A0065EC0C /* FacebookCore */; };
 		49CCF635246C4DD50065EC0C /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCF634246C4DD50065EC0C /* FacebookViewController.swift */; };
 		49CCF639246D64380065EC0C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCF638246D64380065EC0C /* ProfileViewController.swift */; };
+		49E5FA8F24703E7B0058E6D3 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5FA8E24703E7B0058E6D3 /* NewHabitViewController.swift */; };
+		49E5FA922470692E0058E6D3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49E5FA902470692E0058E6D3 /* Model.xcdatamodeld */; };
 		B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */; };
 		B2938001243CD0C700B0BCAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2938000243CD0C700B0BCAF /* SceneDelegate.swift */; };
 		B2938006243CD0C700B0BCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2938004243CD0C700B0BCAF /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		49CCF634246C4DD50065EC0C /* FacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		49CCF638246D64380065EC0C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		49E5FA8E24703E7B0058E6D3 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
+		49E5FA912470692E0058E6D3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B2937FFB243CD0C700B0BCAF /* Vane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2938000243CD0C700B0BCAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49E5FA9B24712B570058E6D3 /*  Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2C67F132440E73A00A70EA2 /* Habit.swift */,
+			);
+			path = " Model";
+			sourceTree = "<group>";
+		};
+		49E5FA9C24712E5F0058E6D3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B2C67F0F2440E4DA00A70EA2 /* HabitViewController.swift */,
+				49CCF638246D64380065EC0C /* ProfileViewController.swift */,
+				49CCF634246C4DD50065EC0C /* FacebookViewController.swift */,
+				49E5FA8E24703E7B0058E6D3 /* NewHabitViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		B2937FF2243CD0C700B0BCAF = {
 			isa = PBXGroup;
 			children = (
@@ -115,15 +138,14 @@
 			children = (
 				B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */,
 				B2938000243CD0C700B0BCAF /* SceneDelegate.swift */,
+				49E5FA9C24712E5F0058E6D3 /* ViewController */,
+				49E5FA9B24712B570058E6D3 /*  Model */,
 				B2938004243CD0C700B0BCAF /* Main.storyboard */,
-				B2938007243CD0C800B0BCAF /* Assets.xcassets */,
 				B2938009243CD0C800B0BCAF /* LaunchScreen.storyboard */,
 				B293800C243CD0C800B0BCAF /* Info.plist */,
-				B2C67F0F2440E4DA00A70EA2 /* HabitViewController.swift */,
+				B2938007243CD0C800B0BCAF /* Assets.xcassets */,
+				49E5FA902470692E0058E6D3 /* Model.xcdatamodeld */,
 				B2C67F112440E6D800A70EA2 /* HabitCell.swift */,
-				B2C67F132440E73A00A70EA2 /* Habit.swift */,
-				49CCF634246C4DD50065EC0C /* FacebookViewController.swift */,
-				49CCF638246D64380065EC0C /* ProfileViewController.swift */,
 			);
 			path = Vane;
 			sourceTree = "<group>";
@@ -285,10 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E5FA8F24703E7B0058E6D3 /* NewHabitViewController.swift in Sources */,
 				B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */,
 				B2C67F142440E73A00A70EA2 /* Habit.swift in Sources */,
 				49CCF635246C4DD50065EC0C /* FacebookViewController.swift in Sources */,
 				B2938001243CD0C700B0BCAF /* SceneDelegate.swift in Sources */,
+				49E5FA922470692E0058E6D3 /* Model.xcdatamodeld in Sources */,
 				49CCF639246D64380065EC0C /* ProfileViewController.swift in Sources */,
 				B2C67F122440E6D800A70EA2 /* HabitCell.swift in Sources */,
 				B2C67F102440E4DA00A70EA2 /* HabitViewController.swift in Sources */,
@@ -647,6 +671,19 @@
 			productName = FacebookCore;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		49E5FA902470692E0058E6D3 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49E5FA912470692E0058E6D3 /* Model.xcdatamodel */,
+			);
+			currentVersion = 49E5FA912470692E0058E6D3 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B2937FF3243CD0C700B0BCAF /* Project object */;
 }
