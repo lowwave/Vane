@@ -21,16 +21,27 @@ class HabitViewController: UIViewController {
         super.viewDidLoad()
         
         greetingsLabel.text = "Hello, \n\(username)"
-        
-        createHabits()
         habitsTableView.dataSource = self
+        fetchHabits()
     }
     
-    private func createHabits() {
-        for i in 1...5 {
-            let habit = Habit(title: "Habit number \(i)", icon: "droplet", isComplete: Bool.random())
-            habits.append(habit)
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: completion)
+        fetchHabits()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let habitSetupVC = segue.destination as? HabitSetupViewController {
+            habitSetupVC.parentVC = self
         }
+    }
+    
+    private func fetchHabits() {
+        habits = Storage.default.fetchAllHabits()
+    }
+    
+    public func updateHabits() {
+        self.fetchHabits()
     }
 }
 
@@ -46,12 +57,8 @@ extension HabitViewController: UITableViewDataSource {
         (cell as? HabitCell)?.bind(habit)
         
         (cell as? HabitCell)?.markAsDoneButtonAction = { [unowned self] in
-//            var habit = self.habits[indexPath.row]
-//            print(habit)
             self.habits[indexPath.row].isComplete = !habit.isComplete
             tableView.reloadRows(at: [indexPath], with: .none)
-//            DispatchQueue.main.async {}
-
         }
         return cell
     }

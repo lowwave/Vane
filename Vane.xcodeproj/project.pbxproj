@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1276E413BD2D84001E2CC529 /* Pods_Vane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EAF42B918A2688C39C0F88 /* Pods_Vane.framework */; };
+		49BC59BA2EEC175BA49F91EA /* Pods_VaneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006BA8C44CE47DAD61D05124 /* Pods_VaneTests.framework */; };
 		49CCF62F246C482A0065EC0C /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 49CCF62E246C482A0065EC0C /* FacebookLogin */; };
 		49CCF631246C482A0065EC0C /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 49CCF630246C482A0065EC0C /* FacebookShare */; };
 		49CCF633246C482A0065EC0C /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 49CCF632246C482A0065EC0C /* FacebookCore */; };
 		49CCF635246C4DD50065EC0C /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCF634246C4DD50065EC0C /* FacebookViewController.swift */; };
 		49CCF639246D64380065EC0C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCF638246D64380065EC0C /* ProfileViewController.swift */; };
+		906F2858EF31E3DAF5E6E2D1 /* Pods_Vane_VaneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A4584FC085E113A75815D /* Pods_Vane_VaneUITests.framework */; };
+		B203CBCD2471B5F2003213FF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203CBCC2471B5F2003213FF /* Storage.swift */; };
+		B203CBCF2471B8B1003213FF /* HabitSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203CBCE2471B8B1003213FF /* HabitSetupViewController.swift */; };
+		B203CBD12471DA87003213FF /* colorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203CBD02471DA87003213FF /* colorConstants.swift */; };
 		B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */; };
 		B2938001243CD0C700B0BCAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2938000243CD0C700B0BCAF /* SceneDelegate.swift */; };
 		B2938006243CD0C700B0BCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2938004243CD0C700B0BCAF /* Main.storyboard */; };
@@ -42,8 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006BA8C44CE47DAD61D05124 /* Pods_VaneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VaneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2A4584FC085E113A75815D /* Pods_Vane_VaneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vane_VaneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CCF634246C4DD50065EC0C /* FacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
 		49CCF638246D64380065EC0C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4A9092D96FFC0B0EF961D199 /* Pods-VaneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VaneTests.debug.xcconfig"; path = "Target Support Files/Pods-VaneTests/Pods-VaneTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5C4D5B423D70370A100FDEB4 /* Pods-VaneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VaneTests.release.xcconfig"; path = "Target Support Files/Pods-VaneTests/Pods-VaneTests.release.xcconfig"; sourceTree = "<group>"; };
+		85DCD1662A0A74459CB9E18F /* Pods-Vane-VaneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vane-VaneUITests.debug.xcconfig"; path = "Target Support Files/Pods-Vane-VaneUITests/Pods-Vane-VaneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		89EAF42B918A2688C39C0F88 /* Pods_Vane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B203CBCC2471B5F2003213FF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		B203CBCE2471B8B1003213FF /* HabitSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSetupViewController.swift; sourceTree = "<group>"; };
+		B203CBD02471DA87003213FF /* colorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorConstants.swift; sourceTree = "<group>"; };
 		B2937FFB243CD0C700B0BCAF /* Vane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2938000243CD0C700B0BCAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +75,9 @@
 		B2C67F0F2440E4DA00A70EA2 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		B2C67F112440E6D800A70EA2 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		B2C67F132440E73A00A70EA2 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		C807AC87C9264DAE31837CDD /* Pods-Vane-VaneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vane-VaneUITests.release.xcconfig"; path = "Target Support Files/Pods-Vane-VaneUITests/Pods-Vane-VaneUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F50CADDA194EBE694A18917F /* Pods-Vane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vane.release.xcconfig"; path = "Target Support Files/Pods-Vane/Pods-Vane.release.xcconfig"; sourceTree = "<group>"; };
+		FAC04846B038B2C0ADD06134 /* Pods-Vane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vane.debug.xcconfig"; path = "Target Support Files/Pods-Vane/Pods-Vane.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +88,7 @@
 				49CCF631246C482A0065EC0C /* FacebookShare in Frameworks */,
 				49CCF633246C482A0065EC0C /* FacebookCore in Frameworks */,
 				49CCF62F246C482A0065EC0C /* FacebookLogin in Frameworks */,
+				1276E413BD2D84001E2CC529 /* Pods_Vane.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49BC59BA2EEC175BA49F91EA /* Pods_VaneTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +104,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906F2858EF31E3DAF5E6E2D1 /* Pods_Vane_VaneUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		037C5E2A55F85D90546CCD34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89EAF42B918A2688C39C0F88 /* Pods_Vane.framework */,
+				3A2A4584FC085E113A75815D /* Pods_Vane_VaneUITests.framework */,
+				006BA8C44CE47DAD61D05124 /* Pods_VaneTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B2937FF2243CD0C700B0BCAF = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +128,8 @@
 				B2938014243CD0C800B0BCAF /* VaneTests */,
 				B293801F243CD0C800B0BCAF /* VaneUITests */,
 				B2937FFC243CD0C700B0BCAF /* Products */,
+				C8082172CFDD22EDD7110849 /* Pods */,
+				037C5E2A55F85D90546CCD34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +157,9 @@
 				B2C67F132440E73A00A70EA2 /* Habit.swift */,
 				49CCF634246C4DD50065EC0C /* FacebookViewController.swift */,
 				49CCF638246D64380065EC0C /* ProfileViewController.swift */,
+				B203CBCC2471B5F2003213FF /* Storage.swift */,
+				B203CBCE2471B8B1003213FF /* HabitSetupViewController.swift */,
+				B203CBD02471DA87003213FF /* colorConstants.swift */,
 			);
 			path = Vane;
 			sourceTree = "<group>";
@@ -146,6 +182,19 @@
 			path = VaneUITests;
 			sourceTree = "<group>";
 		};
+		C8082172CFDD22EDD7110849 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAC04846B038B2C0ADD06134 /* Pods-Vane.debug.xcconfig */,
+				F50CADDA194EBE694A18917F /* Pods-Vane.release.xcconfig */,
+				85DCD1662A0A74459CB9E18F /* Pods-Vane-VaneUITests.debug.xcconfig */,
+				C807AC87C9264DAE31837CDD /* Pods-Vane-VaneUITests.release.xcconfig */,
+				4A9092D96FFC0B0EF961D199 /* Pods-VaneTests.debug.xcconfig */,
+				5C4D5B423D70370A100FDEB4 /* Pods-VaneTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2938025243CD0C800B0BCAF /* Build configuration list for PBXNativeTarget "Vane" */;
 			buildPhases = (
+				5ED986673F8C47E24F78CA4C /* [CP] Check Pods Manifest.lock */,
 				B2937FF7243CD0C700B0BCAF /* Sources */,
 				B2937FF8243CD0C700B0BCAF /* Frameworks */,
 				B2937FF9243CD0C700B0BCAF /* Resources */,
+				BC6EEF033CE9E307CF3FA04C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2938028243CD0C800B0BCAF /* Build configuration list for PBXNativeTarget "VaneTests" */;
 			buildPhases = (
+				6A003E87CE43AD1B428DA6EC /* [CP] Check Pods Manifest.lock */,
 				B293800D243CD0C800B0BCAF /* Sources */,
 				B293800E243CD0C800B0BCAF /* Frameworks */,
 				B293800F243CD0C800B0BCAF /* Resources */,
@@ -193,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B293802B243CD0C800B0BCAF /* Build configuration list for PBXNativeTarget "VaneUITests" */;
 			buildPhases = (
+				FD97E039DB0B4EA3621B59DB /* [CP] Check Pods Manifest.lock */,
 				B2938018243CD0C800B0BCAF /* Sources */,
 				B2938019243CD0C800B0BCAF /* Frameworks */,
 				B293801A243CD0C800B0BCAF /* Resources */,
+				41689823E7E197F3794B6360 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,16 +334,122 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41689823E7E197F3794B6360 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vane-VaneUITests/Pods-Vane-VaneUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vane-VaneUITests/Pods-Vane-VaneUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vane-VaneUITests/Pods-Vane-VaneUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ED986673F8C47E24F78CA4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vane-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A003E87CE43AD1B428DA6EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VaneTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC6EEF033CE9E307CF3FA04C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vane/Pods-Vane-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vane/Pods-Vane-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vane/Pods-Vane-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD97E039DB0B4EA3621B59DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vane-VaneUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B2937FF7243CD0C700B0BCAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */,
+				B203CBCF2471B8B1003213FF /* HabitSetupViewController.swift in Sources */,
 				B2C67F142440E73A00A70EA2 /* Habit.swift in Sources */,
+				B203CBD12471DA87003213FF /* colorConstants.swift in Sources */,
 				49CCF635246C4DD50065EC0C /* FacebookViewController.swift in Sources */,
 				B2938001243CD0C700B0BCAF /* SceneDelegate.swift in Sources */,
 				49CCF639246D64380065EC0C /* ProfileViewController.swift in Sources */,
+				B203CBCD2471B5F2003213FF /* Storage.swift in Sources */,
 				B2C67F122440E6D800A70EA2 /* HabitCell.swift in Sources */,
 				B2C67F102440E4DA00A70EA2 /* HabitViewController.swift in Sources */,
 			);
@@ -464,6 +624,7 @@
 		};
 		B2938026243CD0C800B0BCAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAC04846B038B2C0ADD06134 /* Pods-Vane.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -482,6 +643,7 @@
 		};
 		B2938027243CD0C800B0BCAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F50CADDA194EBE694A18917F /* Pods-Vane.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,6 +662,7 @@
 		};
 		B2938029243CD0C800B0BCAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A9092D96FFC0B0EF961D199 /* Pods-VaneTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -521,6 +684,7 @@
 		};
 		B293802A243CD0C800B0BCAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C4D5B423D70370A100FDEB4 /* Pods-VaneTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -542,6 +706,7 @@
 		};
 		B293802C243CD0C800B0BCAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85DCD1662A0A74459CB9E18F /* Pods-Vane-VaneUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,6 +726,7 @@
 		};
 		B293802D243CD0C800B0BCAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C807AC87C9264DAE31837CDD /* Pods-Vane-VaneUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

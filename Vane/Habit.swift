@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Habit {
+class Habit: Object {
     
-    var title: String
-    var icon: String
-    var isComplete: Bool
+    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var title: String!
+    @objc dynamic var icon: String!
+    @objc dynamic var isComplete: Bool = false
+    @objc dynamic var colorIndex: Int = 0
+    
+    let reminderTime = RealmOptional<Double>()
+    var weekdays = List<Int>()
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }

@@ -11,9 +11,6 @@ import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    // Swift
-    // AppDelegate.swift
 
     func application(
         _ application: UIApplication,
@@ -27,14 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-          
     
     func application(
         _ app: UIApplication,
         open url: URL,
         options: [UIApplication.OpenURLOptionsKey : Any] = [:]
     ) -> Bool {
-        
 
         ApplicationDelegate.shared.application(
             app,

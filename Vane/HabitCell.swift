@@ -37,7 +37,7 @@ class HabitCell: UITableViewCell {
         
         habitCompleteButton.layer.cornerRadius = 20
         habitCompleteButton.layer.borderWidth = 1.5
-        habitCompleteButton.layer.borderColor = UIColor.black.cgColor
+        habitCompleteButton.layer.borderColor = UIColor.white.cgColor
         
         self.markAsDoneButton.addTarget(self, action: #selector(markAsDone(_:)), for: .touchUpInside)
         
@@ -45,7 +45,8 @@ class HabitCell: UITableViewCell {
     
     func bind(_ habit: Habit) {
         self.habitTitleLabel.text = habit.title
-        self.habitIconView.image = UIImage(named: habit.icon)
+        self.habitTitleLabel.textColor = .white
+        self.habitWrapperView.backgroundColor = habitColors[habit.colorIndex]
         
         if habit.isComplete {
             habitCompleteButton.setImage(UIImage(named: "check"), for: .normal)
