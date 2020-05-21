@@ -28,6 +28,7 @@ class HabitCell: UITableViewCell {
         super.awakeFromNib()
         
         contentView.clipsToBounds = false
+        selectionStyle = .none
         
         habitWrapperView.layer.cornerRadius = 10
         habitWrapperView.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
@@ -47,6 +48,7 @@ class HabitCell: UITableViewCell {
         self.habitTitleLabel.text = habit.title
         self.habitTitleLabel.textColor = .white
         self.habitWrapperView.backgroundColor = habitColors[habit.colorIndex]
+        self.habitIconView.image = UIImage.init(named: habit.icon)
         
         if habit.isComplete {
             habitCompleteButton.setImage(UIImage(named: "check"), for: .normal)

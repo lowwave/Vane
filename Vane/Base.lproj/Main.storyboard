@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wff-Rx-tqh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wff-Rx-tqh">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -54,7 +53,7 @@
                                         </constraints>
                                         <state key="normal" image="plus"/>
                                         <connections>
-                                            <segue destination="cUL-E0-mIb" kind="show" id="wgU-jt-L3l"/>
+                                            <action selector="addNewHabitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zhu-Zu-lss"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98Y-NE-Wnt">
@@ -167,14 +166,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2964" y="1110"/>
+            <point key="canvasLocation" x="-2913" y="1110"/>
         </scene>
         <!--Habit Setup View Controller-->
         <scene sceneID="wbq-Xv-wHf">
             <objects>
-                <viewController id="cUL-E0-mIb" customClass="HabitSetupViewController" customModule="Vane" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HabitSetupViewController" id="cUL-E0-mIb" customClass="HabitSetupViewController" customModule="Vane" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2K0-r9-DTS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-J6-cRh">
@@ -218,26 +217,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V5V-RK-Kd4">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V5V-RK-Kd4">
                                 <rect key="frame" x="30" y="275" width="315" height="52"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Rj8-8a-XUC"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dTE-GY-pq2">
-                                    <size key="itemSize" width="57" height="52"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nvd-50-C2d">
+                                    <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wlx-pe-Qv9">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HabitIconCell" id="wlx-pe-Qv9" customClass="HabitIconCell" customModule="Vane" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sow-a2-jYj">
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="57" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XGu-Qk-bqc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="52"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="XGu-Qk-bqc" secondAttribute="trailing" id="CQf-I1-PQE"/>
+                                            <constraint firstItem="XGu-Qk-bqc" firstAttribute="leading" secondItem="wlx-pe-Qv9" secondAttribute="leading" id="X0y-8i-jNZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="XGu-Qk-bqc" secondAttribute="bottom" id="qxu-xx-sXp"/>
+                                            <constraint firstItem="XGu-Qk-bqc" firstAttribute="top" secondItem="wlx-pe-Qv9" secondAttribute="top" id="wrE-Y5-YwI"/>
+                                        </constraints>
+                                        <size key="customSize" width="57" height="52"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="XGu-Qk-bqc" id="bsy-Xl-duI"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -273,22 +287,32 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="7:00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FSa-YH-RZk">
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="7:00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FSa-YH-RZk">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="54"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzW-Ss-v0R">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="54"/>
+                                        <connections>
+                                            <action selector="setupReminderTapped:" destination="cUL-E0-mIb" eventType="touchUpInside" id="KHL-VY-QcU"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="FSa-YH-RZk" secondAttribute="bottom" id="0kW-yA-dDe"/>
+                                    <constraint firstItem="KzW-Ss-v0R" firstAttribute="top" secondItem="wQp-Zb-VPm" secondAttribute="top" id="K9N-Cv-aPy"/>
                                     <constraint firstAttribute="trailing" secondItem="FSa-YH-RZk" secondAttribute="trailing" constant="8" id="PiL-qe-bax"/>
+                                    <constraint firstAttribute="bottom" secondItem="KzW-Ss-v0R" secondAttribute="bottom" id="QTs-w4-2kE"/>
                                     <constraint firstItem="FSa-YH-RZk" firstAttribute="leading" secondItem="wQp-Zb-VPm" secondAttribute="leading" id="SyN-pn-FG1"/>
                                     <constraint firstAttribute="height" constant="54" id="gz9-gy-ske"/>
                                     <constraint firstItem="Wdn-6v-YTA" firstAttribute="leading" secondItem="Jap-rv-hPM" secondAttribute="trailing" constant="15" id="hlc-Ai-oro"/>
                                     <constraint firstItem="Jap-rv-hPM" firstAttribute="leading" secondItem="wQp-Zb-VPm" secondAttribute="leading" constant="5" id="rNc-hd-ymE"/>
+                                    <constraint firstAttribute="trailing" secondItem="KzW-Ss-v0R" secondAttribute="trailing" id="tmg-wz-X6g"/>
                                     <constraint firstItem="Wdn-6v-YTA" firstAttribute="centerY" secondItem="wQp-Zb-VPm" secondAttribute="centerY" id="vqp-iT-voD"/>
+                                    <constraint firstItem="KzW-Ss-v0R" firstAttribute="leading" secondItem="wQp-Zb-VPm" secondAttribute="leading" id="wlg-MM-w9J"/>
                                     <constraint firstItem="FSa-YH-RZk" firstAttribute="top" secondItem="wQp-Zb-VPm" secondAttribute="top" id="xjR-Au-rro"/>
                                     <constraint firstItem="Jap-rv-hPM" firstAttribute="centerY" secondItem="wQp-Zb-VPm" secondAttribute="centerY" id="z4m-4O-0Y4"/>
                                 </constraints>
@@ -306,6 +330,18 @@
                                 </state>
                                 <connections>
                                     <action selector="saveTapped:" destination="cUL-E0-mIb" eventType="touchUpInside" id="OXN-qg-4jL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QY2-To-lDo">
+                                <rect key="frame" x="322" y="23.5" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="wmS-bq-Buy"/>
+                                    <constraint firstAttribute="height" constant="28" id="zuA-9L-9Rr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="trash"/>
+                                <connections>
+                                    <action selector="deleteHabitTapped:" destination="cUL-E0-mIb" eventType="touchUpInside" id="9bf-DM-dOT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -326,6 +362,7 @@
                             <constraint firstItem="V5V-RK-Kd4" firstAttribute="centerX" secondItem="2K0-r9-DTS" secondAttribute="centerX" id="MtD-aK-9xq"/>
                             <constraint firstItem="42c-AP-qRv" firstAttribute="trailing" secondItem="V5V-RK-Kd4" secondAttribute="trailing" id="O4n-H6-JIh"/>
                             <constraint firstItem="g8T-J6-cRh" firstAttribute="centerX" secondItem="2K0-r9-DTS" secondAttribute="centerX" id="R76-e6-mPK"/>
+                            <constraint firstItem="0hs-rs-Zei" firstAttribute="trailing" secondItem="QY2-To-lDo" secondAttribute="trailing" constant="25" id="Sph-c4-m0e"/>
                             <constraint firstItem="1eN-E2-QLM" firstAttribute="top" secondItem="T1X-3g-cl7" secondAttribute="bottom" constant="8" id="Tqs-Ze-NPX"/>
                             <constraint firstItem="42c-AP-qRv" firstAttribute="leading" secondItem="QID-aV-yTr" secondAttribute="leading" id="V6S-at-xkI"/>
                             <constraint firstItem="0hs-rs-Zei" firstAttribute="bottom" secondItem="T1X-3g-cl7" secondAttribute="bottom" constant="462" id="Xx4-Hb-nTP"/>
@@ -336,6 +373,7 @@
                             <constraint firstItem="T1X-3g-cl7" firstAttribute="leading" secondItem="Thn-Dq-ahZ" secondAttribute="leading" id="sC6-DY-5Ao"/>
                             <constraint firstItem="1eN-E2-QLM" firstAttribute="leading" secondItem="T1X-3g-cl7" secondAttribute="leading" id="v2N-fS-93H"/>
                             <constraint firstItem="Sto-bj-9pX" firstAttribute="top" secondItem="1eN-E2-QLM" secondAttribute="bottom" constant="20" id="wSK-BR-1Wi"/>
+                            <constraint firstItem="QY2-To-lDo" firstAttribute="centerY" secondItem="g8T-J6-cRh" secondAttribute="centerY" id="yaX-6Y-a7j"/>
                             <constraint firstItem="T1X-3g-cl7" firstAttribute="top" secondItem="Thn-Dq-ahZ" secondAttribute="bottom" constant="20" id="zRE-QL-ULm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0hs-rs-Zei"/>
@@ -343,17 +381,19 @@
                     <navigationItem key="navigationItem" id="APU-Nw-LZH"/>
                     <connections>
                         <outlet property="colorCollection" destination="42c-AP-qRv" id="rSK-hT-ZMG"/>
+                        <outlet property="deleteHabitButton" destination="QY2-To-lDo" id="BNf-PF-Zlh"/>
                         <outlet property="iconCollection" destination="V5V-RK-Kd4" id="T5c-4C-lKM"/>
                         <outlet property="reminderInputView" destination="FSa-YH-RZk" id="y1c-gk-V4c"/>
                         <outlet property="reminderView" destination="wQp-Zb-VPm" id="zVl-Nb-pQO"/>
                         <outlet property="saveButton" destination="N8z-Rt-vgs" id="7ZL-t9-rtR"/>
                         <outlet property="scheduleContainer" destination="1eN-E2-QLM" id="izh-yG-ewc"/>
+                        <outlet property="setupReminderButton" destination="KzW-Ss-v0R" id="SWc-1V-Xui"/>
                         <outlet property="titleField" destination="Thn-Dq-ahZ" id="jFg-vN-cBg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3a-e3-msA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2964" y="1912.8935532233884"/>
+            <point key="canvasLocation" x="-2074" y="2165"/>
         </scene>
         <!--Facebook View Controller-->
         <scene sceneID="5IY-iV-axf">
@@ -384,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acq-Sz-D2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2964" y="340"/>
+            <point key="canvasLocation" x="-3943" y="365"/>
         </scene>
         <!--Tab bar controller-->
         <scene sceneID="5M5-Dg-Q9h">
@@ -397,7 +437,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tfq-Pj-oiB"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Ymb-p8-b7w"/>
                         <segue destination="0ln-8s-b7M" kind="relationship" relationship="viewControllers" id="wCz-CX-pou"/>
                         <segue destination="2ly-mx-yeo" kind="relationship" relationship="viewControllers" id="jpN-GI-BVT"/>
                     </connections>
@@ -430,5 +470,6 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" width="45" height="45"/>
         <image name="target" width="24" height="24"/>
+        <image name="trash" width="24" height="24"/>
     </resources>
 </document>

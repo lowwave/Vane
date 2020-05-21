@@ -17,7 +17,7 @@
 		906F2858EF31E3DAF5E6E2D1 /* Pods_Vane_VaneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A4584FC085E113A75815D /* Pods_Vane_VaneUITests.framework */; };
 		B203CBCD2471B5F2003213FF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203CBCC2471B5F2003213FF /* Storage.swift */; };
 		B203CBCF2471B8B1003213FF /* HabitSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203CBCE2471B8B1003213FF /* HabitSetupViewController.swift */; };
-		B203CBD12471DA87003213FF /* colorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203CBD02471DA87003213FF /* colorConstants.swift */; };
+		B203CBD12471DA87003213FF /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203CBD02471DA87003213FF /* constants.swift */; };
 		B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */; };
 		B2938001243CD0C700B0BCAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2938000243CD0C700B0BCAF /* SceneDelegate.swift */; };
 		B2938006243CD0C700B0BCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2938004243CD0C700B0BCAF /* Main.storyboard */; };
@@ -25,6 +25,9 @@
 		B293800B243CD0C800B0BCAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2938009243CD0C800B0BCAF /* LaunchScreen.storyboard */; };
 		B2938016243CD0C800B0BCAF /* VaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2938015243CD0C800B0BCAF /* VaneTests.swift */; };
 		B2938021243CD0C800B0BCAF /* VaneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2938020243CD0C800B0BCAF /* VaneUITests.swift */; };
+		B2A02B232476DA180045A201 /* HabitIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A02B222476DA180045A201 /* HabitIconCell.swift */; };
+		B2A02B252476E3660045A201 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A02B242476E3660045A201 /* PickerView.swift */; };
+		B2A02B272476E56C0045A201 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A02B262476E56C0045A201 /* PickerViewController.swift */; };
 		B2C67F102440E4DA00A70EA2 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C67F0F2440E4DA00A70EA2 /* HabitViewController.swift */; };
 		B2C67F122440E6D800A70EA2 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C67F112440E6D800A70EA2 /* HabitCell.swift */; };
 		B2C67F142440E73A00A70EA2 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C67F132440E73A00A70EA2 /* Habit.swift */; };
@@ -58,7 +61,7 @@
 		89EAF42B918A2688C39C0F88 /* Pods_Vane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B203CBCC2471B5F2003213FF /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B203CBCE2471B8B1003213FF /* HabitSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSetupViewController.swift; sourceTree = "<group>"; };
-		B203CBD02471DA87003213FF /* colorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorConstants.swift; sourceTree = "<group>"; };
+		B203CBD02471DA87003213FF /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		B2937FFB243CD0C700B0BCAF /* Vane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2938000243CD0C700B0BCAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +75,9 @@
 		B293801C243CD0C800B0BCAF /* VaneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2938020243CD0C800B0BCAF /* VaneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaneUITests.swift; sourceTree = "<group>"; };
 		B2938022243CD0C800B0BCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2A02B222476DA180045A201 /* HabitIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitIconCell.swift; sourceTree = "<group>"; };
+		B2A02B242476E3660045A201 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		B2A02B262476E56C0045A201 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		B2C67F0F2440E4DA00A70EA2 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		B2C67F112440E6D800A70EA2 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		B2C67F132440E73A00A70EA2 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
@@ -159,7 +165,10 @@
 				49CCF638246D64380065EC0C /* ProfileViewController.swift */,
 				B203CBCC2471B5F2003213FF /* Storage.swift */,
 				B203CBCE2471B8B1003213FF /* HabitSetupViewController.swift */,
-				B203CBD02471DA87003213FF /* colorConstants.swift */,
+				B203CBD02471DA87003213FF /* constants.swift */,
+				B2A02B222476DA180045A201 /* HabitIconCell.swift */,
+				B2A02B242476E3660045A201 /* PickerView.swift */,
+				B2A02B262476E56C0045A201 /* PickerViewController.swift */,
 			);
 			path = Vane;
 			sourceTree = "<group>";
@@ -445,10 +454,13 @@
 				B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */,
 				B203CBCF2471B8B1003213FF /* HabitSetupViewController.swift in Sources */,
 				B2C67F142440E73A00A70EA2 /* Habit.swift in Sources */,
-				B203CBD12471DA87003213FF /* colorConstants.swift in Sources */,
+				B2A02B272476E56C0045A201 /* PickerViewController.swift in Sources */,
+				B203CBD12471DA87003213FF /* constants.swift in Sources */,
 				49CCF635246C4DD50065EC0C /* FacebookViewController.swift in Sources */,
 				B2938001243CD0C700B0BCAF /* SceneDelegate.swift in Sources */,
+				B2A02B232476DA180045A201 /* HabitIconCell.swift in Sources */,
 				49CCF639246D64380065EC0C /* ProfileViewController.swift in Sources */,
+				B2A02B252476E3660045A201 /* PickerView.swift in Sources */,
 				B203CBCD2471B5F2003213FF /* Storage.swift in Sources */,
 				B2C67F122440E6D800A70EA2 /* HabitCell.swift in Sources */,
 				B2C67F102440E4DA00A70EA2 /* HabitViewController.swift in Sources */,

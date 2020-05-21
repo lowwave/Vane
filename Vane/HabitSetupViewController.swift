@@ -24,25 +24,37 @@ class HabitSetupViewController: UIViewController {
     @IBOutlet weak var reminderInputView: UITextField!
     @IBOutlet weak var reminderView: UIView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var setupReminderButton: UIButton!
+    @IBOutlet weak var deleteHabitButton: UIButton!
     
     private var weekdayViews = [WeekdayView]()
     private var colorViews = [ColorView]()
-    private var selectedColorIndex: Int = 0 {
-        didSet {
-            updateColorSelection()
-        }
-    }
-    private var timePicker: UIDatePicker!
+    private var selectedColorIndex: Int = 0
     private var selectedTime: Double? = nil
+    private var selectedIcon: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        definesPresentationContext = true
+//        hidesBottomBarWhenPushed = true
+        
+        if habit == nil {
+            deleteHabitButton.isHidden = true
+        }
         
         reminderView.layer.borderWidth = 1
         reminderView.layer.borderColor = UIColor.black.cgColor
         reminderView.layer.cornerRadius = 10
         
         saveButton.layer.cornerRadius = 5
+        
+        // Data from habit
+        
+        titleField.text = habit?.title
+        selectedTime = habit?.reminderTime.value
+        selectedIcon = habit?.icon ?? iconNames.randomElement()!
+        selectedColorIndex = habit?.colorIndex ?? 0
         
         // Creating weekday views
         
@@ -51,11 +63,16 @@ class HabitSetupViewController: UIViewController {
         weekdayViews = weekdayNames.compactMap({
             let weekdayView = WeekdayView()
             weekdayView.title = $0
+            weekdayView.accentColor = habitColors[selectedColorIndex]
             return weekdayView
         })
         
         weekdayViews.forEach {
             scheduleContainer.addArrangedSubview($0)
+        }
+        
+        for (index, view) in weekdayViews.enumerated() {
+            view.isSelected = habit?.weekdays.contains(index) == true
         }
         
         // Creating colors
@@ -75,16 +92,13 @@ class HabitSetupViewController: UIViewController {
             colorCollection.addArrangedSubview(view)
         }
         
-        selectedColorIndex = 0
+        updateColorSelection()
+        timeChanged()
         
         // Setup reminder time picker
         
-        timePicker = UIDatePicker()
-        timePicker.minuteInterval = 15
-        timePicker.locale = NSLocale(localeIdentifier: "en_GB") as Locale
-        timePicker.datePickerMode = .time
-        timePicker.addTarget(self, action: #selector(timeChanged), for: .valueChanged)
-        reminderInputView.inputView = timePicker
+        iconCollection.dataSource = self
+        iconCollection.delegate = self
     }
     
     func updateColorSelection() {
@@ -104,28 +118,50 @@ class HabitSetupViewController: UIViewController {
     @objc func colorChanged(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             self.selectedColorIndex = sender.view!.tag
+            self.updateColorSelection()
         }
         
         self.weekdayViews.forEach {
             $0.accentColor = habitColors[selectedColorIndex]
         }
+        
+        self.iconCollection.reloadData()
     }
     
     @objc func timeChanged() {
-        selectedTime = timePicker.countDownDuration
+        if let duration: TimeInterval = selectedTime {
+            var calendar = Calendar.current
+            calendar.locale = Locale(identifier: "en")
+
+            let formatter = DateComponentsFormatter()
+            formatter.calendar = calendar
+            formatter.unitsStyle = .positional
+            formatter.allowedUnits = [.hour, .minute]
+            formatter.zeroFormattingBehavior = [.dropLeading]
+
+            reminderInputView.text = formatter.string(from: duration) ?? "No Reminder"
+        } else {
+            reminderInputView.text = "No Reminder"
+        }
+    }
+    
+    @IBAction func setupReminderTapped(_ sender: Any) {
+        let vc = PickerViewController(time: habit?.reminderTime.value, title: "Reminder") { [weak self] (newTime) in
+            self?.selectedTime = newTime
+            self?.timeChanged()
+        }
+        self.present(vc, animated: false, completion: nil)
+    }
+    
+    
+    @IBAction func deleteHabitTapped(_ sender: Any) {
+        if let existingHabit = habit {
+            Storage.default.removeHabit(habit: existingHabit)
+        }
         
-        let duration: TimeInterval = timePicker.countDownDuration
-
-        var calendar = Calendar.current
-        calendar.locale = Locale(identifier: "en")
-
-        let formatter = DateComponentsFormatter()
-        formatter.calendar = calendar
-        formatter.unitsStyle = .positional
-        formatter.allowedUnits = [.hour, .minute]
-        formatter.zeroFormattingBehavior = [.dropLeading]
-
-        reminderInputView.text = formatter.string(from: duration) ?? "No Reminder"
+        self.dismiss(animated: true) {
+            self.parentVC?.updateHabits()
+        }
     }
     
     @IBAction func saveTapped(_ sender: Any) {
@@ -135,7 +171,8 @@ class HabitSetupViewController: UIViewController {
         
         // Saving the title
         
-        habit?.title = titleField.text ?? "New Habit"
+        let title = titleField.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        habit?.title = title.isEmpty ? "New Habit" : title
         
         // Saving selected weekdays
         
@@ -151,6 +188,14 @@ class HabitSetupViewController: UIViewController {
         
         habit?.colorIndex = selectedColorIndex
         
+        // Saving the icon
+        
+        habit?.icon = selectedIcon
+        
+        // Saving the time
+        
+        habit?.reminderTime.value = selectedTime
+        
         // Saving
         
         if let habit = habit {
@@ -158,7 +203,7 @@ class HabitSetupViewController: UIViewController {
         }
         
         self.dismiss(animated: true) {
-          self.parentVC?.updateHabits()
+            self.parentVC?.updateHabits()
         }
     }
     
@@ -248,5 +293,36 @@ extension UIColor {
                   green: CGFloat((rgb >> 8) & 0xff) / 255.0,
                   blue: CGFloat(rgb & 0xff) / 255.0,
                   alpha: 1.0)
+    }
+}
+
+extension HabitSetupViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return iconNames.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HabitIconCell", for: indexPath) as! HabitIconCell
+        
+        cell.contentView.backgroundColor = habitColors[selectedColorIndex]
+        
+        let iconName = iconNames[indexPath.item]
+        cell.imageView.image = UIImage(named: iconName)
+        cell.contentView.alpha = (iconName == selectedIcon) ? 1 : 0.4
+        
+        return cell
+    }
+}
+
+extension HabitSetupViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 57, height: 52)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIcon = iconNames[indexPath.item]
+        collectionView.reloadData()
     }
 }

@@ -32,8 +32,11 @@ final class Storage {
     }
     
     public func removeHabit(habit: Habit) {
+        guard let realm = self.realm else { return }
+        let objects = realm.objects(Habit.self)
+        guard let objectToDelete = objects.filter("id = '\(habit.id)'").first else { return }
         try! realm.write {
-            realm.delete(habit)
+            realm.delete(objectToDelete)
         }
     }
 }
