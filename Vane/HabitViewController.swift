@@ -37,7 +37,7 @@ class HabitViewController: UIViewController {
         }
         greetingsLabel.text = "Hello, \n\(username)"
         
-        daysArray = Array(today - 14 ... 0)
+        daysArray = Array(-14...0)
         
 //      Setup horizontal scrolling of days
         
