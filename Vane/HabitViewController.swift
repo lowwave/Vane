@@ -10,9 +10,8 @@ import UIKit
 
 class HabitViewController: UIViewController {
     
-//    var habits: [Habit] = []
     var habits = [Habit]()
-    var username: String = "Username"
+    var username: String = "Hero"
     
     @IBOutlet weak var habitsTableView: UITableView!
     @IBOutlet weak var greetingsLabel: UILabel!
@@ -24,14 +23,22 @@ class HabitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        greetingsLabel.text = "Hello, \n\(username)"
         habitsTableView.dataSource = self
         habitsTableView.delegate = self
         fetchHabits()
+        
+        let defaults = UserDefaults.standard
+        if let fbName = defaults.string(forKey: fbData.firstName) {
+            username = fbName
+        }
+        greetingsLabel.text = "Hello, \n\(username)"
     }
     
     private func fetchHabits() {
         habits = Storage.default.fetchAllHabits()
+//        for habit in habits {
+//            Storage.default.removeHabit(habit: habit)
+//        }
         habitsTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         deselectActiveRow()
     }

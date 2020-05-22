@@ -28,3 +28,10 @@ let iconNames: [String] = ["basket",
                            "sun",
                            "terminal",
                            "zap"]
+
+struct fbData {
+    static let id = "fbId"
+    static let email = "fbEmail"
+    static let firstName = "fbFirstName"
+    static let lastName = "fbLastName"
+}

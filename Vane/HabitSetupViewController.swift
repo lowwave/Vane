@@ -26,6 +26,7 @@ class HabitSetupViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var setupReminderButton: UIButton!
     @IBOutlet weak var deleteHabitButton: UIButton!
+    @IBOutlet weak var windowTitle: UILabel!
     
     private var weekdayViews = [WeekdayView]()
     private var colorViews = [ColorView]()
@@ -41,6 +42,8 @@ class HabitSetupViewController: UIViewController {
         
         if habit == nil {
             deleteHabitButton.isHidden = true
+        } else {
+            windowTitle.text = "Edit habit"
         }
         
         reminderView.layer.borderWidth = 1

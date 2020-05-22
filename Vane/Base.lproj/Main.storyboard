@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wff-Rx-tqh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wff-Rx-tqh">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -186,7 +186,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Habit Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Thn-Dq-ahZ">
-                                <rect key="frame" x="30" y="75" width="315" height="34"/>
+                                <rect key="frame" x="30" y="75" width="315" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Unj-2L-t6B"/>
                                 </constraints>
@@ -194,7 +194,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1X-3g-cl7">
-                                <rect key="frame" x="30" y="129" width="100.5" height="29"/>
+                                <rect key="frame" x="30" y="176" width="100.5" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="ayc-3C-NQb"/>
                                 </constraints>
@@ -203,13 +203,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1eN-E2-QLM">
-                                <rect key="frame" x="30" y="166" width="315" height="40"/>
+                                <rect key="frame" x="30" y="213" width="315" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="j3m-eV-a6q"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sto-bj-9pX">
-                                <rect key="frame" x="30" y="226" width="46" height="29"/>
+                                <rect key="frame" x="30" y="273" width="46" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="C8s-9G-DKf"/>
                                 </constraints>
@@ -218,7 +218,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V5V-RK-Kd4">
-                                <rect key="frame" x="30" y="275" width="315" height="52"/>
+                                <rect key="frame" x="30" y="322" width="315" height="52"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Rj8-8a-XUC"/>
@@ -256,7 +256,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QID-aV-yTr">
-                                <rect key="frame" x="30" y="360" width="58" height="29"/>
+                                <rect key="frame" x="30" y="407" width="58" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="HLU-5P-iUY"/>
                                 </constraints>
@@ -265,14 +265,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="42c-AP-qRv">
-                                <rect key="frame" x="30" y="409" width="315" height="30"/>
+                                <rect key="frame" x="30" y="456" width="315" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Spc-Wf-QHl"/>
                                     <constraint firstAttribute="height" constant="30" id="aJl-W3-E2r"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQp-Zb-VPm">
-                                <rect key="frame" x="30" y="459" width="315" height="54"/>
+                                <rect key="frame" x="30" y="506" width="315" height="54"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-rv-hPM">
                                         <rect key="frame" x="5" y="9.5" width="35" height="35"/>
@@ -318,7 +318,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8z-Rt-vgs">
-                                <rect key="frame" x="47" y="563" width="281" height="43"/>
+                                <rect key="frame" x="47" y="610" width="281" height="43"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="8JI-Zd-aXs"/>
@@ -389,6 +389,7 @@
                         <outlet property="scheduleContainer" destination="1eN-E2-QLM" id="izh-yG-ewc"/>
                         <outlet property="setupReminderButton" destination="KzW-Ss-v0R" id="SWc-1V-Xui"/>
                         <outlet property="titleField" destination="Thn-Dq-ahZ" id="jFg-vN-cBg"/>
+                        <outlet property="windowTitle" destination="g8T-J6-cRh" id="MZa-eT-tNZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3a-e3-msA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

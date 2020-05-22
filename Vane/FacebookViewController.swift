@@ -14,6 +14,7 @@ class FacebookViewController: UIViewController, LoginButtonDelegate, UIViewContr
         let button = FBLoginButton()
         return button
     }()
+    let defaults = UserDefaults.standard
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         
@@ -33,7 +34,15 @@ class FacebookViewController: UIViewController, LoginButtonDelegate, UIViewContr
             loginButton.delegate = self
             loginButton.center = view.center
             view.addSubview(loginButton)
+            resetFbData()
         }
+    }
+    
+    func resetFbData() {
+        self.defaults.set(nil, forKey: fbData.firstName)
+        self.defaults.set(nil, forKey: fbData.lastName)
+        self.defaults.set(nil, forKey: fbData.id)
+        self.defaults.set(nil, forKey: fbData.email)
     }
     
     func fetchProfile() {
@@ -49,12 +58,18 @@ class FacebookViewController: UIViewController, LoginButtonDelegate, UIViewContr
             
             let data = result as! [String: Any]
             
-//            let fbFirstName = data["first_name"] as! String
-//            let fbLastName = data["last_name"] as! String
-//            let fbId = data["id"] as! String
-//            let fbEmail = data["email"] as? String
+            let fbFirstName = data["first_name"] as! String
+            let fbLastName = data["last_name"] as! String
+            let fbId = data["id"] as! String
+            let fbEmail = data["email"] as? String
             
             print(data)
+            
+            self.defaults.set(fbFirstName, forKey: fbData.firstName)
+            self.defaults.set(fbLastName, forKey: fbData.lastName)
+            self.defaults.set(fbId, forKey: fbData.id)
+            self.defaults.set(fbEmail, forKey: fbData.email)
+
 //            print(fbFirstName, fbLastName, fbId)
             
             self.finishSignIn()
