@@ -20,6 +20,13 @@
 		B247E2132478502F00E59417 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B247E2122478502F00E59417 /* OnboardingView.xib */; };
 		B247E2152478545A00E59417 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247E2142478545A00E59417 /* OnboardingView.swift */; };
 		B247E217247855F800E59417 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247E216247855F800E59417 /* OnboardingViewController.swift */; };
+		B247E21E2478622400E59417 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247E21D2478622400E59417 /* NotificationsManager.swift */; };
+		B247E2202478624600E59417 /* NotificationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247E21F2478624600E59417 /* NotificationObject.swift */; };
+		B247E2222478627000E59417 /* NotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247E2212478627000E59417 /* NotificationContent.swift */; };
+		B247E2242478629400E59417 /* NotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247E2232478629400E59417 /* NotificationStorage.swift */; };
+		B247E226247862C000E59417 /* NotificationSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247E225247862C000E59417 /* NotificationSound.swift */; };
+		B247E2282478630800E59417 /* VaneNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247E2272478630800E59417 /* VaneNotificationsController.swift */; };
+		B247E22A247865D200E59417 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247E229247865D200E59417 /* PermissionManager.swift */; };
 		B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */; };
 		B2938006243CD0C700B0BCAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2938004243CD0C700B0BCAF /* Main.storyboard */; };
 		B2938008243CD0C800B0BCAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2938007243CD0C800B0BCAF /* Assets.xcassets */; };
@@ -65,6 +72,13 @@
 		B247E2122478502F00E59417 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		B247E2142478545A00E59417 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		B247E216247855F800E59417 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		B247E21D2478622400E59417 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		B247E21F2478624600E59417 /* NotificationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObject.swift; sourceTree = "<group>"; };
+		B247E2212478627000E59417 /* NotificationContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContent.swift; sourceTree = "<group>"; };
+		B247E2232478629400E59417 /* NotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStorage.swift; sourceTree = "<group>"; };
+		B247E225247862C000E59417 /* NotificationSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSound.swift; sourceTree = "<group>"; };
+		B247E2272478630800E59417 /* VaneNotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaneNotificationsController.swift; sourceTree = "<group>"; };
+		B247E229247865D200E59417 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		B2937FFB243CD0C700B0BCAF /* Vane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2937FFE243CD0C700B0BCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2938005243CD0C700B0BCAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +193,20 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		B247E21C2478620F00E59417 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				B247E21D2478622400E59417 /* NotificationsManager.swift */,
+				B247E21F2478624600E59417 /* NotificationObject.swift */,
+				B247E2212478627000E59417 /* NotificationContent.swift */,
+				B247E2232478629400E59417 /* NotificationStorage.swift */,
+				B247E225247862C000E59417 /* NotificationSound.swift */,
+				B247E2272478630800E59417 /* VaneNotificationsController.swift */,
+				B247E229247865D200E59417 /* PermissionManager.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		B2937FF2243CD0C700B0BCAF = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +232,7 @@
 		B2937FFD243CD0C700B0BCAF /* Vane */ = {
 			isa = PBXGroup;
 			children = (
+				B247E21C2478620F00E59417 /* Notifications */,
 				B247E21A24785B4900E59417 /* Supporting Files */,
 				B247E21924785B1600E59417 /* HabitSetup */,
 				B247E21824785AF800E59417 /* HabitList */,
@@ -498,13 +527,20 @@
 				B2937FFF243CD0C700B0BCAF /* AppDelegate.swift in Sources */,
 				B203CBCF2471B8B1003213FF /* HabitSetupViewController.swift in Sources */,
 				B2C67F142440E73A00A70EA2 /* Habit.swift in Sources */,
+				B247E2202478624600E59417 /* NotificationObject.swift in Sources */,
 				B2A02B272476E56C0045A201 /* PickerViewController.swift in Sources */,
 				B203CBD12471DA87003213FF /* constants.swift in Sources */,
+				B247E22A247865D200E59417 /* PermissionManager.swift in Sources */,
+				B247E2222478627000E59417 /* NotificationContent.swift in Sources */,
 				B247E217247855F800E59417 /* OnboardingViewController.swift in Sources */,
 				B2A02B232476DA180045A201 /* HabitIconCell.swift in Sources */,
 				49CCF639246D64380065EC0C /* ProfileViewController.swift in Sources */,
+				B247E21E2478622400E59417 /* NotificationsManager.swift in Sources */,
 				B2A02B252476E3660045A201 /* PickerView.swift in Sources */,
+				B247E226247862C000E59417 /* NotificationSound.swift in Sources */,
 				B203CBCD2471B5F2003213FF /* Storage.swift in Sources */,
+				B247E2242478629400E59417 /* NotificationStorage.swift in Sources */,
+				B247E2282478630800E59417 /* VaneNotificationsController.swift in Sources */,
 				B2C67F122440E6D800A70EA2 /* HabitCell.swift in Sources */,
 				B2C67F102440E4DA00A70EA2 /* HabitViewController.swift in Sources */,
 				B247E2152478545A00E59417 /* OnboardingView.swift in Sources */,

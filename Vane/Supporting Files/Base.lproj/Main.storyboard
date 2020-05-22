@@ -48,13 +48,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eU2-Y5-DBC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-vl-Oq3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-vl-Oq3">
                                         <rect key="frame" x="295" y="27.5" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="4g7-C5-5S5"/>
                                             <constraint firstAttribute="width" secondItem="iP9-vl-Oq3" secondAttribute="height" multiplier="1:1" id="ScL-5G-B9s"/>
                                         </constraints>
-                                        <state key="normal" image="plus"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" image="add"/>
                                         <connections>
                                             <action selector="addNewHabitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zhu-Zu-lss"/>
                                         </connections>
@@ -405,7 +406,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNz-Yr-nvt">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNz-Yr-nvt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
                         </subviews>
@@ -465,10 +466,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="90" height="90"/>
         <image name="bell" width="35" height="35"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="plus" width="45" height="45"/>
         <image name="target" width="24" height="24"/>
         <image name="trash" width="24" height="24"/>
     </resources>

@@ -53,7 +53,7 @@ class PickerView: UIView {
         datePicker?.datePickerMode = .time
         datePicker?.minuteInterval = 1
         datePicker?.addTarget(self, action: #selector(self.datePickerValueChanged), for: .valueChanged)
-        datePicker?.minuteInterval = 15
+        datePicker?.minuteInterval = 1
         addSubview(datePicker!)
       
         setupConstraints()
