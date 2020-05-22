@@ -15,6 +15,10 @@ class HabitViewController: UIViewController {
     
     @IBOutlet weak var habitsTableView: UITableView!
     @IBOutlet weak var greetingsLabel: UILabel!
+    @IBOutlet weak var daysCollectionView: UICollectionView!
+    
+    var daysArray: [Int] = []
+    private var daysViews = [String]()
 
     @IBAction func addNewHabitPressed(_ sender: Any) {
         presentSetupScreen()
@@ -32,6 +36,15 @@ class HabitViewController: UIViewController {
             username = fbName
         }
         greetingsLabel.text = "Hello, \n\(username)"
+        
+        daysArray = Array(today - 14 ... 0)
+        
+//      Setup horizontal scrolling of days
+        
+        daysCollectionView.dataSource = self
+        daysCollectionView.delegate = self
+    
+        
     }
     
     private func fetchHabits() {
@@ -86,5 +99,32 @@ extension HabitViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.presentSetupScreen(for: habits[indexPath.row])
+    }
+}
+
+extension HabitViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return daysArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as! DayCell
+        let day = daysArray[indexPath.item]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd"
+        let date = Calendar.current.date(byAdding: .day, value: day, to: Date())!
+        cell.label.text = formatter.string(from: date)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 52, height: 52)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.reloadData()
     }
 }

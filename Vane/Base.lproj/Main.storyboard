@@ -43,10 +43,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eU2-Y5-DBC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-vl-Oq3">
-                                        <rect key="frame" x="295" y="27.5" width="45" height="45"/>
+                                        <rect key="frame" x="305" y="25" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="4g7-C5-5S5"/>
                                             <constraint firstAttribute="width" secondItem="iP9-vl-Oq3" secondAttribute="height" multiplier="1:1" id="ScL-5G-B9s"/>
@@ -56,24 +56,65 @@
                                             <action selector="addNewHabitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zhu-Zu-lss"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98Y-NE-Wnt">
-                                        <rect key="frame" x="25" y="32" width="255" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98Y-NE-Wnt">
+                                        <rect key="frame" x="25" y="15" width="255" height="72"/>
+                                        <string key="text">Hello,
+Hero</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qUp-hq-KnH" userLabel="Days Collection">
+                                        <rect key="frame" x="25" y="113" width="325" height="52"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="i7B-v8-ffY"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dhU-WF-sSJ">
+                                            <size key="itemSize" width="128" height="52"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="vZt-Bu-rrW" customClass="DayCell" customModule="Vane" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="52"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="52"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UP7-1U-ipY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <size key="customSize" width="57" height="52"/>
+                                                <connections>
+                                                    <outlet property="label" destination="UP7-1U-ipY" id="H4H-YZ-pbd"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="iP9-vl-Oq3" firstAttribute="centerY" secondItem="eU2-Y5-DBC" secondAttribute="centerY" id="O0G-5X-UUq"/>
-                                    <constraint firstItem="98Y-NE-Wnt" firstAttribute="centerY" secondItem="eU2-Y5-DBC" secondAttribute="centerY" id="cDU-42-kqp"/>
-                                    <constraint firstItem="98Y-NE-Wnt" firstAttribute="leading" secondItem="eU2-Y5-DBC" secondAttribute="leading" constant="25" id="gLM-8q-Ty9"/>
-                                    <constraint firstItem="iP9-vl-Oq3" firstAttribute="leading" secondItem="98Y-NE-Wnt" secondAttribute="trailing" constant="15" id="hCN-cN-0xy"/>
-                                    <constraint firstAttribute="trailing" secondItem="iP9-vl-Oq3" secondAttribute="trailing" constant="35" id="nFi-M5-xpM"/>
+                                    <constraint firstAttribute="bottom" secondItem="qUp-hq-KnH" secondAttribute="bottom" constant="15" id="3qz-PR-nec"/>
+                                    <constraint firstItem="iP9-vl-Oq3" firstAttribute="leading" secondItem="98Y-NE-Wnt" secondAttribute="trailing" constant="25" id="JNp-7D-oa7"/>
+                                    <constraint firstItem="98Y-NE-Wnt" firstAttribute="leading" secondItem="eU2-Y5-DBC" secondAttribute="leading" constant="25" id="PCO-P0-V3O"/>
+                                    <constraint firstAttribute="trailing" secondItem="qUp-hq-KnH" secondAttribute="trailing" constant="25" id="SCH-4a-xuE"/>
+                                    <constraint firstAttribute="trailing" secondItem="iP9-vl-Oq3" secondAttribute="trailing" constant="25" id="UN7-mA-I9T"/>
+                                    <constraint firstItem="iP9-vl-Oq3" firstAttribute="top" secondItem="eU2-Y5-DBC" secondAttribute="top" constant="25" id="bz4-7e-jQt"/>
+                                    <constraint firstItem="qUp-hq-KnH" firstAttribute="leading" secondItem="eU2-Y5-DBC" secondAttribute="leading" constant="25" id="eYb-OQ-6kv"/>
+                                    <constraint firstItem="98Y-NE-Wnt" firstAttribute="top" secondItem="eU2-Y5-DBC" secondAttribute="top" constant="15" id="wLD-fE-1tf"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iyV-ml-Ksm">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="180" width="375" height="487"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitCell" rowHeight="85" id="GLf-zr-YWV" customClass="HabitCell" customModule="Vane" customModuleProvider="target">
@@ -146,7 +187,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="iyV-ml-Ksm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="3m7-t4-Rsq"/>
+                            <constraint firstItem="iyV-ml-Ksm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="3m7-t4-Rsq"/>
                             <constraint firstItem="iyV-ml-Ksm" firstAttribute="top" secondItem="eU2-Y5-DBC" secondAttribute="bottom" id="7Kh-3e-SHr"/>
                             <constraint firstAttribute="bottom" secondItem="iyV-ml-Ksm" secondAttribute="bottom" id="9rP-qI-o44"/>
                             <constraint firstItem="eU2-Y5-DBC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GGr-zd-1wJ"/>
@@ -160,13 +201,14 @@
                     <tabBarItem key="tabBarItem" title="Habits" image="target" id="sMT-jP-Jbf"/>
                     <navigationItem key="navigationItem" title="Habits" id="xt7-hq-Qpf"/>
                     <connections>
+                        <outlet property="daysCollectionView" destination="qUp-hq-KnH" id="tvM-c3-5qh"/>
                         <outlet property="greetingsLabel" destination="98Y-NE-Wnt" id="F4d-cQ-KrQ"/>
                         <outlet property="habitsTableView" destination="iyV-ml-Ksm" id="ZYI-Ye-wFq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2913" y="1110"/>
+            <point key="canvasLocation" x="-2914.4000000000001" y="1109.5952023988007"/>
         </scene>
         <!--Habit Setup View Controller-->
         <scene sceneID="wbq-Xv-wHf">
@@ -394,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3a-e3-msA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2074" y="2165"/>
+            <point key="canvasLocation" x="-2914" y="1826"/>
         </scene>
         <!--Facebook View Controller-->
         <scene sceneID="5IY-iV-axf">
