@@ -44,7 +44,7 @@ class HabitSetupViewController: UIViewController {
         }
         
         reminderView.layer.borderWidth = 1
-        reminderView.layer.borderColor = UIColor.black.cgColor
+        reminderView.layer.borderColor = habitColors[self.selectedColorIndex].cgColor
         reminderView.layer.cornerRadius = 10
         
         saveButton.layer.cornerRadius = 5
