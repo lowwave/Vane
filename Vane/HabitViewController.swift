@@ -56,9 +56,7 @@ class HabitViewController: UIViewController {
     
         let date = getFormattedDate(selectedDate)
         completedHabits = Storage.default.fetchCompletedHabitsByDate(date: date)
-        
-        print(completedHabits)
-        
+
         habitsTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         deselectActiveRow()
     }
@@ -147,6 +145,8 @@ extension HabitViewController: UICollectionViewDataSource, UICollectionViewDeleg
         formatter.dateFormat = "dd"
         let date = Calendar.current.date(byAdding: .day, value: day, to: Date())!
         cell.label.text = formatter.string(from: date)
+        cell.label.backgroundColor = getFormattedDate(date) == getFormattedDate(selectedDate) ? .black : .white
+        cell.label.textColor = getFormattedDate(date) == getFormattedDate(selectedDate) ? .white: .black
         return cell
     }
     
