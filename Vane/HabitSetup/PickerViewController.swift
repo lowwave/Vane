@@ -39,7 +39,6 @@ class PickerViewController: UIViewController {
 
         fadeView.edgesToSuperview()
 
-//        pickerView.height(containerHeight)
         pickerView.leftToSuperview()
         pickerView.rightToSuperview()
         pickerView.bottomToSuperview()
@@ -116,7 +115,6 @@ class PickerViewController: UIViewController {
 
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             self.fadeView.alpha = 1
-//            self.pickerView.transform = .identity
         }, completion: nil)
     }
 

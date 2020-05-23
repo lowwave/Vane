@@ -7,36 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
-        <scene sceneID="1SS-ut-qRL">
-            <objects>
-                <viewController title="Profile" id="2ly-mx-yeo" customClass="ProfileViewController" customModule="Vane" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eS7-9w-AHL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4N-bm-A5l">
-                                <rect key="frame" x="71" y="552" width="232" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Log out">
-                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logout:" destination="2ly-mx-yeo" eventType="touchUpInside" id="8pR-ZA-jLY"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="hzQ-8Y-GcV"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="BFZ-Rc-GFE"/>
-                    <navigationItem key="navigationItem" title="Profile" id="5PZ-Qi-jfC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E4S-0d-sxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1092" y="1109.5952023988007"/>
-        </scene>
         <!--Habits-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -188,13 +158,30 @@ Hero</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No habits for today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2c-YY-LOB">
+                                <rect key="frame" x="105" y="494" width="165" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="gOQ-FY-f9v">
+                                <rect key="frame" x="62.5" y="206" width="250" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="2WQ-Pg-utJ"/>
+                                    <constraint firstAttribute="width" constant="250" id="g1z-Om-fxq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="gOQ-FY-f9v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1du-zF-0Vz"/>
                             <constraint firstItem="iyV-ml-Ksm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="3m7-t4-Rsq"/>
                             <constraint firstItem="iyV-ml-Ksm" firstAttribute="top" secondItem="eU2-Y5-DBC" secondAttribute="bottom" id="7Kh-3e-SHr"/>
                             <constraint firstAttribute="bottom" secondItem="iyV-ml-Ksm" secondAttribute="bottom" id="9rP-qI-o44"/>
+                            <constraint firstItem="gOQ-FY-f9v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ddp-W8-YPq"/>
                             <constraint firstItem="eU2-Y5-DBC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GGr-zd-1wJ"/>
+                            <constraint firstItem="s2c-YY-LOB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HGs-xT-Erc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s2c-YY-LOB" secondAttribute="bottom" constant="100" id="Muv-bC-1RY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eU2-Y5-DBC" secondAttribute="trailing" id="MxJ-nB-5D2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iyV-ml-Ksm" secondAttribute="trailing" id="UHr-qn-6wk"/>
                             <constraint firstItem="eU2-Y5-DBC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kbB-bK-h1Z"/>
@@ -205,6 +192,8 @@ Hero</string>
                     <tabBarItem key="tabBarItem" title="Habits" image="target" id="sMT-jP-Jbf"/>
                     <navigationItem key="navigationItem" title="Habits" id="xt7-hq-Qpf"/>
                     <connections>
+                        <outlet property="emptyImage" destination="gOQ-FY-f9v" id="0p1-YW-KjI"/>
+                        <outlet property="emptyLabel" destination="s2c-YY-LOB" id="H4x-sg-xWu"/>
                         <outlet property="daysCollectionView" destination="qUp-hq-KnH" id="tvM-c3-5qh"/>
                         <outlet property="greetingsLabel" destination="98Y-NE-Wnt" id="F4d-cQ-KrQ"/>
                         <outlet property="habitsTableView" destination="iyV-ml-Ksm" id="ZYI-Ye-wFq"/>
@@ -434,6 +423,7 @@ Hero</string>
                         <outlet property="scheduleContainer" destination="1eN-E2-QLM" id="izh-yG-ewc"/>
                         <outlet property="setupReminderButton" destination="KzW-Ss-v0R" id="SWc-1V-Xui"/>
                         <outlet property="titleField" destination="Thn-Dq-ahZ" id="jFg-vN-cBg"/>
+                        <outlet property="viewTitle" destination="g8T-J6-cRh" id="fa0-dl-5dT"/>
                         <outlet property="windowTitle" destination="g8T-J6-cRh" id="MZa-eT-tNZ"/>
                     </connections>
                 </viewController>
@@ -483,7 +473,6 @@ Hero</string>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Ymb-p8-b7w"/>
                         <segue destination="0ln-8s-b7M" kind="relationship" relationship="viewControllers" id="wCz-CX-pou"/>
-                        <segue destination="2ly-mx-yeo" kind="relationship" relationship="viewControllers" id="jpN-GI-BVT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAo-P3-0sL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -563,10 +552,10 @@ Hero</string>
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="90" height="90"/>
+        <image name="add" width="24" height="24"/>
         <image name="bell" width="35" height="35"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="empty" width="350" height="356"/>
         <image name="target" width="24" height="24"/>
         <image name="trash" width="24" height="24"/>
     </resources>

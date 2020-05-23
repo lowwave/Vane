@@ -15,7 +15,6 @@
 		49CCF62F246C482A0065EC0C /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 49CCF62E246C482A0065EC0C /* FacebookLogin */; };
 		49CCF631246C482A0065EC0C /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 49CCF630246C482A0065EC0C /* FacebookShare */; };
 		49CCF633246C482A0065EC0C /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 49CCF632246C482A0065EC0C /* FacebookCore */; };
-		49CCF639246D64380065EC0C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CCF638246D64380065EC0C /* ProfileViewController.swift */; };
 		906F2858EF31E3DAF5E6E2D1 /* Pods_Vane_VaneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A4584FC085E113A75815D /* Pods_Vane_VaneUITests.framework */; };
 		B203CBCD2471B5F2003213FF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203CBCC2471B5F2003213FF /* Storage.swift */; };
 		B203CBCF2471B8B1003213FF /* HabitSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203CBCE2471B8B1003213FF /* HabitSetupViewController.swift */; };
@@ -199,14 +198,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B247E21B24785BB600E59417 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				49CCF638246D64380065EC0C /* ProfileViewController.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		B247E21C2478620F00E59417 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,7 +243,6 @@
 				B247E21924785B1600E59417 /* HabitSetup */,
 				B247E21824785AF800E59417 /* HabitList */,
 				B247E2112478501700E59417 /* Onboarding */,
-				B247E21B24785BB600E59417 /* Profile */,
 				B2C67F132440E73A00A70EA2 /* Habit.swift */,
 				49C77C632479283500F46775 /* DayCell.swift */,
 				B203CBCC2471B5F2003213FF /* Storage.swift */,
@@ -746,7 +736,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = I;
+				PRODUCT_BUNDLE_IDENTIFIER = com.application.vane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -765,7 +755,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = I;
+				PRODUCT_BUNDLE_IDENTIFIER = com.application.vane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

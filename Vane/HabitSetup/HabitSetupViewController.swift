@@ -17,6 +17,7 @@ class HabitSetupViewController: UIViewController {
     
     public var habit: Habit? = nil
     
+    @IBOutlet weak var viewTitle: UILabel!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var scheduleContainer: UIStackView!
     @IBOutlet weak var iconCollection: UICollectionView!
@@ -37,24 +38,25 @@ class HabitSetupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        definesPresentationContext = true
-//        hidesBottomBarWhenPushed = true
-        
         if habit == nil {
             deleteHabitButton.isHidden = true
         } else {
             windowTitle.text = "Edit habit"
         }
         
+        let habitTitle = habit?.title
+        
+        viewTitle.text = habitTitle != nil ? "Edit habit" : "Create new habit"
+        
         reminderView.layer.borderWidth = 1
-        reminderView.layer.borderColor = habitColors[self.selectedColorIndex].cgColor
+        reminderView.layer.borderColor = habitColors[habit?.colorIndex ?? 0].cgColor
         reminderView.layer.cornerRadius = 10
         
         saveButton.layer.cornerRadius = 5
         
         // Data from habit
         
-        titleField.text = habit?.title
+        titleField.text = habitTitle
         selectedTime = habit?.reminderTime.value
         selectedIcon = habit?.icon ?? iconNames.randomElement()!
         selectedColorIndex = habit?.colorIndex ?? 0
