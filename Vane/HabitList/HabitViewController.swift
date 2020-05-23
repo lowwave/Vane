@@ -10,13 +10,14 @@ import UIKit
 
 class HabitViewController: UIViewController {
     
-//    var habits: [Habit] = []
     var habits = [Habit]()
     var username: String = "Username"
     
     @IBOutlet weak var habitsTableView: UITableView!
     @IBOutlet weak var greetingsLabel: UILabel!
-
+    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var emptyImage: UIImageView!
+    
     @IBAction func addNewHabitPressed(_ sender: Any) {
         presentSetupScreen()
     }
@@ -28,6 +29,11 @@ class HabitViewController: UIViewController {
         habitsTableView.dataSource = self
         habitsTableView.delegate = self
         fetchHabits()
+        
+        if self.habits.count != 0 {
+            self.emptyImage.isHidden = true
+            self.emptyLabel.isHidden = true
+        }
     }
     
     private func fetchHabits() {
@@ -38,6 +44,14 @@ class HabitViewController: UIViewController {
     
     public func updateHabits() {
         self.fetchHabits()
+        
+        if self.habits.count == 0 {
+            self.emptyImage.isHidden = false
+            self.emptyLabel.isHidden = false
+        } else {
+            self.emptyImage.isHidden = true
+            self.emptyLabel.isHidden = true
+        }
     }
     
     func deselectActiveRow() {

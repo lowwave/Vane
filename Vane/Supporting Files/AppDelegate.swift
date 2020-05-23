@@ -23,6 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
+        
+        let manager = DefaultsManager()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if manager.isNewUser() {
+            
+            let controller = storyboard.instantiateViewController(withIdentifier: "onboarding") as! UIViewController
+            window.rootViewController = controller
+        }  else {
+            let controller = storyboard.instantiateViewController(withIdentifier: "tabBarViewController") as! UITabBarController
+            window.rootViewController = controller
+        }
 
         return true
     }

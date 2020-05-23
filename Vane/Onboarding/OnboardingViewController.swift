@@ -17,14 +17,22 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         
         let nib = UINib(nibName: "OnboardingView", bundle: nil)
+        let manager = DefaultsManager()
+        
+        if manager.isNewUser() == false {
+            finishSignIn()
+        }
+        
         containerView = nib.instantiate(withOwner: self, options: nil).first as? OnboardingView
         
         containerView.scrollView = scrollView
         containerView.onLoggedIn = {
             self.finishSignIn()
+            manager.setIsNotNewUser()
         }
         containerView.onSkipLoginTapped = {
             self.finishSignIn()
+            manager.setIsNotNewUser()
         }
         
         scrollView.addSubview(containerView)
@@ -40,5 +48,17 @@ class OnboardingViewController: UIViewController {
     func finishSignIn() {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "tabBarViewController") as! UITabBarController
         self.view.window?.rootViewController = controller
+    }
+}
+
+class DefaultsManager {
+    
+    func isNewUser() -> Bool {
+        return !UserDefaults.standard.bool(forKey: "isNewUser")
+    }
+    
+    func setIsNotNewUser() {
+        UserDefaults.standard.set(true, forKey: "isNewUser")
+        UserDefaults.standard.synchronize()
     }
 }
