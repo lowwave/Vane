@@ -38,6 +38,7 @@ class ProgressViewController: UIViewController, ChartViewDelegate {
         var i = 0
         
         var datesArray = [String]()
+        datesArray.append("")
         
         
         let formatter = DateFormatter()
@@ -109,7 +110,7 @@ class ProgressViewController: UIViewController, ChartViewDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         let dateStr: String = formatter.string(from: date)
-        let weekday = Calendar.current.component(.weekday, from: date) - 2
+        let weekday = Calendar.current.component(.weekday, from: date)
         let all = Storage.default.fetchAllHabits().filter({$0.weekdays.contains(weekday)}).count
         let completedHabits = Storage.default.fetchCompletedHabitsByDate(date: dateStr)
         let completed = completedHabits.count

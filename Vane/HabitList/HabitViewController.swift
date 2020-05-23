@@ -84,7 +84,7 @@ class HabitViewController: UIViewController {
     }
     
     public func getWeekday(_ date: Date) -> Int {
-        return Calendar.current.component(.weekday, from: date) - 2
+        return Calendar.current.component(.weekday, from: date)
     }
 
     public func getFormattedDate(_ date: Date) -> String {
