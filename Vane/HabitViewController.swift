@@ -11,13 +11,15 @@ import UIKit
 class HabitViewController: UIViewController {
     
     var habits = [Habit]()
+    var completedHabits = [CompletedHabit]()
     var username: String = "Hero"
     
     @IBOutlet weak var habitsTableView: UITableView!
     @IBOutlet weak var greetingsLabel: UILabel!
     @IBOutlet weak var daysCollectionView: UICollectionView!
+    var selectedDate: Date = Date()
     
-    var daysArray: [Int] = []
+    var daysArray: [Int] = Array(-14...0)
     private var daysViews = [String]()
 
     @IBAction func addNewHabitPressed(_ sender: Any) {
@@ -37,27 +39,42 @@ class HabitViewController: UIViewController {
         }
         greetingsLabel.text = "Hello, \n\(username)"
         
-        daysArray = Array(-14...0)
-        
-//      Setup horizontal scrolling of days
+        // Setup horizontal scrolling of days
         
         daysCollectionView.dataSource = self
         daysCollectionView.delegate = self
-    
         
     }
     
     private func fetchHabits() {
         habits = Storage.default.fetchAllHabits()
+        let weekday = getWeekday(selectedDate)
+        habits = habits.filter { $0.weekdays.contains(weekday) }
 //        for habit in habits {
 //            Storage.default.removeHabit(habit: habit)
 //        }
+    
+        let date = getFormattedDate(selectedDate)
+        completedHabits = Storage.default.fetchCompletedHabitsByDate(date: date)
+        
+        print(completedHabits)
+        
         habitsTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         deselectActiveRow()
     }
     
     public func updateHabits() {
         self.fetchHabits()
+    }
+    
+    public func getWeekday(_ date: Date) -> Int {
+        return Calendar.current.component(.weekday, from: date) - 2
+    }
+    
+    public func getFormattedDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: date)
     }
     
     func deselectActiveRow() {
@@ -83,13 +100,27 @@ extension HabitViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell", for: indexPath) as! HabitCell
         let habit = habits[indexPath.row]
-        (cell as? HabitCell)?.bind(habit)
+                
+        habits[indexPath.row].isComplete = !self.completedHabits.filter({$0.habitId == habit.id}).isEmpty
         
-        (cell as? HabitCell)?.markAsDoneButtonAction = { [unowned self] in
-            self.habits[indexPath.row].isComplete = !habit.isComplete
-            tableView.reloadRows(at: [indexPath], with: .none)
+        cell.bind(habits[indexPath.row])
+        cell.markAsDoneButtonAction = { [unowned self] in
+            
+            let habit = self.habits[indexPath.row]
+            
+            if habit.isComplete {
+                Storage.default.removeCompletedHabitByHabitId(habitId: habit.id)
+            } else {
+                let completed = CompletedHabit()
+                completed.habitId = habit.id
+                completed.day = self.getFormattedDate(self.selectedDate)
+                Storage.default.saveCompletedHabit(completedHabit: completed)
+            }
+            
+            self.habits[indexPath.row].isComplete = !self.habits[indexPath.row].isComplete
+            cell.changeState(habit.isComplete)
         }
         return cell
     }
@@ -125,6 +156,8 @@ extension HabitViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedDate = Calendar.current.date(byAdding: .day, value: daysArray[indexPath.item], to: Date())!
         collectionView.reloadData()
+        fetchHabits()
     }
 }

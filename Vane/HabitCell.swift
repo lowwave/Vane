@@ -44,16 +44,20 @@ class HabitCell: UITableViewCell {
         
     }
     
+    func changeState(_ isCompleted: Bool) {
+        if isCompleted {
+            habitCompleteButton.setImage(UIImage(named: "check"), for: .normal)
+        } else {
+            habitCompleteButton.setImage(nil, for: .normal)
+        }
+    }
+    
     func bind(_ habit: Habit) {
         self.habitTitleLabel.text = habit.title
         self.habitTitleLabel.textColor = .white
         self.habitWrapperView.backgroundColor = habitColors[habit.colorIndex]
         self.habitIconView.image = UIImage.init(named: habit.icon)
         
-        if habit.isComplete {
-            habitCompleteButton.setImage(UIImage(named: "check"), for: .normal)
-        } else {
-            habitCompleteButton.setImage(nil, for: .normal)
-        }
+        changeState(habit.isComplete)
     }
 }

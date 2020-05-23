@@ -24,3 +24,15 @@ class Habit: Object {
         return "id"
     }
 }
+
+
+class CompletedHabit : Object {
+    
+    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var day: String!
+    @objc dynamic var habitId: String!
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+}

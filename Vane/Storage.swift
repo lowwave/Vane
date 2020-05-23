@@ -39,4 +39,26 @@ final class Storage {
             realm.delete(objectToDelete)
         }
     }
+    
+    public func fetchCompletedHabitsByDate(date: String) -> [CompletedHabit] {
+        // day in format dd.MM.yyyy
+        let objects = realm.objects(CompletedHabit.self).filter("day = '\(date)'")
+        return Array(objects).compactMap({ CompletedHabit(value: $0) })
+    }
+    
+    
+    public func saveCompletedHabit(completedHabit: CompletedHabit) {
+        try! realm.write {
+            realm.add(completedHabit, update: .modified)
+        }
+    }
+    
+    public func removeCompletedHabitByHabitId(habitId: String) {
+        guard let realm = self.realm else { return }
+        let objects = realm.objects(CompletedHabit.self)
+        guard let objectToDelete = objects.filter("habitId = '\(habitId)'").first else { return }
+        try! realm.write {
+            realm.delete(objectToDelete)
+        }
+    }
 }
