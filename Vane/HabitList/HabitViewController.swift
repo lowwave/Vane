@@ -19,7 +19,7 @@ class HabitViewController: UIViewController {
     @IBOutlet weak var daysCollectionView: UICollectionView!
     var selectedDate: Date = Date()
     
-    var daysArray: [Int] = Array(-14...0)
+    var daysArray: [Int] = Array(-14...14)
     private var daysViews = [String]()
 
     @IBAction func addNewHabitPressed(_ sender: Any) {
@@ -43,6 +43,10 @@ class HabitViewController: UIViewController {
         
         daysCollectionView.dataSource = self
         daysCollectionView.delegate = self
+        
+        
+        daysCollectionView.scrollToItem(at:IndexPath(item: (daysArray.firstIndex(of: 0) ?? 0) + 2,  section: 0), at: .right, animated: false)
+
         
     }
     

@@ -9,6 +9,7 @@ target 'Vane' do
   
   pod 'RealmSwift'
   pod "TinyConstraints"
+  pod "Charts"
 
   target 'VaneTests' do
     inherit! :search_paths

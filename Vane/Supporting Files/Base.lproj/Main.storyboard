@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MRu-TN-RdC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mzo-ox-HNo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -493,19 +493,73 @@ Hero</string>
         <!--Progress-->
         <scene sceneID="krD-3H-tdS">
             <objects>
-                <viewController id="0ln-8s-b7M" sceneMemberID="viewController">
+                <viewController id="0ln-8s-b7M" customClass="ProgressViewController" customModule="Vane" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5fv-My-J2S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Xv-lP-a4F" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="25" y="40" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="az9-hl-dLZ"/>
+                                    <constraint firstAttribute="height" constant="150" id="tvY-EV-a0n"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's goals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twT-SV-S9Q">
+                                <rect key="frame" x="199" y="55" width="136" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjt-tZ-zzm">
+                                <rect key="frame" x="241" y="90" width="53.5" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motivation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWA-Jv-hy9">
+                                <rect key="frame" x="227.5" y="139" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHd-Lp-jrZ" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="25" y="288" width="325" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="epc-MY-IGy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RQX-N5-hBE" firstAttribute="trailing" secondItem="Wjt-tZ-zzm" secondAttribute="trailing" constant="80.5" id="4TM-2l-9Us"/>
+                            <constraint firstItem="eHd-Lp-jrZ" firstAttribute="leading" secondItem="RQX-N5-hBE" secondAttribute="leading" constant="25" id="62h-6U-Brw"/>
+                            <constraint firstItem="twT-SV-S9Q" firstAttribute="top" secondItem="RQX-N5-hBE" secondAttribute="top" constant="55" id="BjE-dT-15S"/>
+                            <constraint firstItem="RQX-N5-hBE" firstAttribute="trailing" secondItem="eHd-Lp-jrZ" secondAttribute="trailing" constant="25" id="FO0-5z-rFv"/>
+                            <constraint firstItem="6Xv-lP-a4F" firstAttribute="top" secondItem="RQX-N5-hBE" secondAttribute="top" constant="40" id="GnH-Vb-B4g"/>
+                            <constraint firstItem="6Xv-lP-a4F" firstAttribute="leading" secondItem="RQX-N5-hBE" secondAttribute="leading" constant="25" id="LlH-gf-j6H"/>
+                            <constraint firstItem="VWA-Jv-hy9" firstAttribute="centerX" secondItem="5fv-My-J2S" secondAttribute="centerX" constant="80" id="M1t-ra-jBH"/>
+                            <constraint firstItem="VWA-Jv-hy9" firstAttribute="top" secondItem="Wjt-tZ-zzm" secondAttribute="bottom" constant="8" id="QFf-sB-NGC"/>
+                            <constraint firstItem="Wjt-tZ-zzm" firstAttribute="top" secondItem="twT-SV-S9Q" secondAttribute="bottom" constant="8" id="R1o-qj-Fgg"/>
+                            <constraint firstItem="RQX-N5-hBE" firstAttribute="bottom" secondItem="eHd-Lp-jrZ" secondAttribute="bottom" constant="30" id="o64-uu-JZJ"/>
+                            <constraint firstItem="RQX-N5-hBE" firstAttribute="trailing" secondItem="twT-SV-S9Q" secondAttribute="trailing" constant="40" id="qJK-96-w2s"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RQX-N5-hBE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Progress" image="chart.bar" catalog="system" id="FsN-Ku-8ZI"/>
                     <navigationItem key="navigationItem" title="Progress" id="kr3-pG-our"/>
+                    <connections>
+                        <outlet property="doneLabel" destination="Wjt-tZ-zzm" id="09q-11-01d"/>
+                        <outlet property="lineChartView" destination="eHd-Lp-jrZ" id="9bx-5v-NBE"/>
+                        <outlet property="motivationLabel" destination="VWA-Jv-hy9" id="aGx-HC-zqj"/>
+                        <outlet property="pieView" destination="6Xv-lP-a4F" id="HVc-Ef-Arz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8m-IP-roT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2007" y="1110"/>
+            <point key="canvasLocation" x="-2007.2" y="1109.5952023988007"/>
         </scene>
     </scenes>
     <resources>

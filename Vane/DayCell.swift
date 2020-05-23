@@ -14,14 +14,14 @@ class DayCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.layer.cornerRadius = 26
+        self.layer.cornerRadius = 5
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 1
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.layer.cornerRadius = 26
+        self.layer.cornerRadius = 5
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 1
     }
