@@ -15,10 +15,8 @@ class ProfileViewController: UIViewController {
         let loginManager = LoginManager()
         loginManager.logOut()
         
-        let controller : UIViewController = (self.storyboard?.instantiateViewController(withIdentifier: "facebookViewController"))!
-        
-        controller.modalPresentationStyle = .fullScreen
-        self.present(controller, animated: false, completion: nil)
+        let controller : UIViewController = (self.storyboard?.instantiateViewController(withIdentifier: "onboarding"))!
+        self.view.window?.rootViewController = controller
     }
     
 }

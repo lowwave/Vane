@@ -47,7 +47,7 @@ class HabitSetupViewController: UIViewController {
         }
         
         reminderView.layer.borderWidth = 1
-        reminderView.layer.borderColor = UIColor.black.cgColor
+        reminderView.layer.borderColor = habitColors[self.selectedColorIndex].cgColor
         reminderView.layer.cornerRadius = 10
         
         saveButton.layer.cornerRadius = 5
@@ -61,7 +61,7 @@ class HabitSetupViewController: UIViewController {
         
         // Creating weekday views
         
-        let weekdayNames = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
+        let weekdayNames = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
         
         weekdayViews = weekdayNames.compactMap({
             let weekdayView = WeekdayView()
@@ -75,7 +75,7 @@ class HabitSetupViewController: UIViewController {
         }
         
         for (index, view) in weekdayViews.enumerated() {
-            view.isSelected = habit?.weekdays.contains(index) == true
+            view.isSelected = habit?.weekdays.contains(index + 1) == true
         }
         
         // Creating colors
@@ -124,6 +124,8 @@ class HabitSetupViewController: UIViewController {
             self.updateColorSelection()
         }
         
+        self.reminderView.layer.borderColor = habitColors[selectedColorIndex].cgColor
+        
         self.weekdayViews.forEach {
             $0.accentColor = habitColors[selectedColorIndex]
         }
@@ -152,6 +154,12 @@ class HabitSetupViewController: UIViewController {
         let vc = PickerViewController(time: habit?.reminderTime.value, title: "Reminder") { [weak self] (newTime) in
             self?.selectedTime = newTime
             self?.timeChanged()
+            
+            if newTime != nil {
+                PermissionManager.request(.notifications) { _ in
+                    
+                }
+            }
         }
         self.present(vc, animated: false, completion: nil)
     }
@@ -183,7 +191,7 @@ class HabitSetupViewController: UIViewController {
         
         for (index, view) in weekdayViews.enumerated() {
             if view.isSelected {
-                habit?.weekdays.append(index)
+                habit?.weekdays.append(index + 1)
             }
         }
         
@@ -266,8 +274,8 @@ class HabitSetupViewController: UIViewController {
         }
         
         func updateState() {
-            label.textColor = isSelected ? .white : .black
-            label.backgroundColor = isSelected ? self.accentColor : .white
+            label.textColor = isSelected ? .white : UIColor.label
+            label.backgroundColor = isSelected ? self.accentColor : .clear
             label.layer.borderColor = self.accentColor.cgColor
         }
         

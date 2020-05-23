@@ -29,6 +29,7 @@ final class Storage {
         try! realm.write {
             realm.add(habit, update: .modified)
         }
+        VaneNotificationsController.instance.scheduleNotifications(for: habit)
     }
     
     public func removeHabit(habit: Habit) {
@@ -38,6 +39,7 @@ final class Storage {
         try! realm.write {
             realm.delete(objectToDelete)
         }
+        VaneNotificationsController.instance.deleteNotifications(for: habit)
     }
     
     public func fetchCompletedHabitsByDate(date: String) -> [CompletedHabit] {
