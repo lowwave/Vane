@@ -19,6 +19,7 @@ class OnboardingView: UIView {
     
     var onSkipLoginTapped: () -> () = {}
     var onLoggedIn: () -> () = {}
+    let defaults = UserDefaults.standard
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
@@ -36,6 +37,14 @@ class OnboardingView: UIView {
     
     @IBAction func skipLoginTapped(_ sender: Any) {
         onSkipLoginTapped()
+        resetFbData() // Fix this
+    }
+    
+    func resetFbData() {
+        self.defaults.set(nil, forKey: fbData.firstName)
+        self.defaults.set(nil, forKey: fbData.lastName)
+        self.defaults.set(nil, forKey: fbData.id)
+        self.defaults.set(nil, forKey: fbData.email)
     }
 }
 
@@ -63,10 +72,15 @@ extension OnboardingView: LoginButtonDelegate {
             
             let data = result as! [String: Any]
             
-//            let fbFirstName = data["first_name"] as! String
-//            let fbLastName = data["last_name"] as! String
-//            let fbId = data["id"] as! String
-//            let fbEmail = data["email"] as? String
+            let fbFirstName = data["first_name"] as! String
+            let fbLastName = data["last_name"] as! String
+            let fbId = data["id"] as! String
+            let fbEmail = data["email"] as? String
+            
+            self.defaults.set(fbFirstName, forKey: fbData.firstName)
+            self.defaults.set(fbLastName, forKey: fbData.lastName)
+            self.defaults.set(fbId, forKey: fbData.id)
+            self.defaults.set(fbEmail, forKey: fbData.email)
             
             print(data)
             
