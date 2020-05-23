@@ -22,7 +22,12 @@ class PickerView: UIView {
     init(title: String) {
         super.init(frame: .zero)
 
-        self.backgroundColor = .white
+        if traitCollection.userInterfaceStyle == .light {
+            self.backgroundColor = .white
+        } else {
+            self.backgroundColor = .black
+        }
+        
 
         titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
